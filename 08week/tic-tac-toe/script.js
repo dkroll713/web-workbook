@@ -1,25 +1,32 @@
 'use strict';
 
 $(document).ready(function() {
-  $(function(){
+$(function(){
     var turn = 'X'
     $('[data-cell]').on('click', function(){
-    if($(this).text() === ''){
+    if($(this).text() === ''||'X'){
       $(this).text(turn);
-      // checkWin();
       if(turn === 'X')
       turn = 'O';
     }else{
       turn = 'X';
     }
+   if($(this).text() === 'O'){
+     $(this).text(turn);
+     if(turn === 'O')
+       turn = 'X';
+   }else{
+     turn = 'O';
+   }
   })
+  checkWin()
   })
-  $function checkWin(){
-    if($('data-cell="0"').text() === turn &&
-    $('data-cell="1"').text() === turn &&
-    $('data-cell="2"').text() === turn){
-      $('#announce-winner').text('X wins!')
-    }}
+
+$(function checkWin(){
+  if($(''))
 })
 
-$('#clear')
+$('#clear').on('click', function(){
+  $('[data-cell]').empty();
+})
+})
